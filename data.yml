@@ -9,8 +9,8 @@ locations:
   SRC:
     mappingDefinitions:
       "3":
-        database: COALESCE_SAMPLE_DATABASE
-        schema: TPCH_SF001
+        database: SCOTT_DB
+        schema: SAMPLE_DATA
 macros: {}
 packages: {}
 projects: {}
