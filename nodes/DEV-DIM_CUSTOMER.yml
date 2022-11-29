@@ -31,7 +31,7 @@ steps:
             hashColumns: []
             isSurrogateKey: true
             name: DIM_CUSTOMER_KEY
-            nullable: true
+            nullable: false
             sourceColumnReferences:
               - columnReferences: []
                 transform: ""
