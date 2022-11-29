@@ -24,7 +24,7 @@ steps:
             hashColumns: []
             hashDetails: null
             name: C_CUSTKEY
-            nullable: false
+            nullable: true
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: 504
