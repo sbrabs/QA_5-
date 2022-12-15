@@ -134,13 +134,15 @@ steps:
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - customSQL:
+          - aliases:
+              STG_CUSTOMER: "50"
+            customSQL:
               customSQL: ""
             dependencies:
-              - locationName: DEV_A
+              - locationName: QA_A
                 nodeName: STG_CUSTOMER
             join:
-              joinCondition: FROM {{ ref('DEV_A', 'STG_CUSTOMER') }} "STG_CUSTOMER"
+              joinCondition: FROM {{ ref('QA_A', 'STG_CUSTOMER') }} "STG_CUSTOMER"
             name: STG_CUSTOMER1
             noLinkRefs: []
       name: STG_CUSTOMER1
