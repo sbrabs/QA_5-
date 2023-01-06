@@ -1,10 +1,13 @@
 steps:
-  CUSTOMER-54:
+  ORDERS-57:
     operation:
       database: ""
       dataset: ""
       deployEnabled: true
-      description: ""
+      description: |-
+        Orders are not present for all customers. In fact, one-third of the customers do not have any order in
+        the database. The orders are assigned at random to two-thirds of the customers (see Clause 4: ). The purpose of
+        this is to exercise the capabilities of the DBMS to handle "dead data" when joining two or more tables.
       locationID: ""
       locationName: SRC
       metadata:
@@ -14,14 +17,14 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 568
-              stepCounter: 54
+              columnCounter: 596
+              stepCounter: 57
             config: {}
             dataType: NUMBER(38,0)
             defaultValue: ""
-            description: SF*150,000 are populated
-            name: C_CUSTKEY
-            nullable: false
+            description: SF*1,500,000 are sparsely populated
+            name: O_ORDERKEY
+            nullable: true
             primaryKey: false
             uniqueKey: false
           - acceptedValues:
@@ -29,44 +32,14 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 569
-              stepCounter: 54
-            config: {}
-            dataType: VARCHAR(25)
-            defaultValue: ""
-            description: ""
-            name: C_NAME
-            nullable: false
-            primaryKey: false
-            uniqueKey: false
-          - acceptedValues:
-              strictMatch: true
-              values: []
-            appliedColumnTests: {}
-            columnReference:
-              columnCounter: 570
-              stepCounter: 54
-            config: {}
-            dataType: VARCHAR(40)
-            defaultValue: ""
-            description: ""
-            name: C_ADDRESS
-            nullable: false
-            primaryKey: false
-            uniqueKey: false
-          - acceptedValues:
-              strictMatch: true
-              values: []
-            appliedColumnTests: {}
-            columnReference:
-              columnCounter: 571
-              stepCounter: 54
+              columnCounter: 597
+              stepCounter: 57
             config: {}
             dataType: NUMBER(38,0)
             defaultValue: ""
-            description: Foreign Key to N_NATIONKEY
-            name: C_NATIONKEY
-            nullable: false
+            description: Foreign Key to C_CUSTKEY
+            name: O_CUSTKEY
+            nullable: true
             primaryKey: false
             uniqueKey: false
           - acceptedValues:
@@ -74,13 +47,13 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 572
-              stepCounter: 54
+              columnCounter: 598
+              stepCounter: 57
             config: {}
-            dataType: VARCHAR(15)
+            dataType: VARCHAR(1)
             defaultValue: ""
             description: ""
-            name: C_PHONE
+            name: O_ORDERSTATUS
             nullable: false
             primaryKey: false
             uniqueKey: false
@@ -89,13 +62,13 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 573
-              stepCounter: 54
+              columnCounter: 599
+              stepCounter: 57
             config: {}
             dataType: NUMBER(12,2)
             defaultValue: ""
             description: ""
-            name: C_ACCTBAL
+            name: O_TOTALPRICE
             nullable: false
             primaryKey: false
             uniqueKey: false
@@ -104,14 +77,14 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 574
-              stepCounter: 54
+              columnCounter: 600
+              stepCounter: 57
             config: {}
-            dataType: VARCHAR(10)
+            dataType: DATE
             defaultValue: ""
             description: ""
-            name: C_MKTSEGMENT
-            nullable: true
+            name: O_ORDERDATE
+            nullable: false
             primaryKey: false
             uniqueKey: false
           - acceptedValues:
@@ -119,21 +92,66 @@ steps:
               values: []
             appliedColumnTests: {}
             columnReference:
-              columnCounter: 575
-              stepCounter: 54
+              columnCounter: 601
+              stepCounter: 57
             config: {}
-            dataType: VARCHAR(117)
+            dataType: VARCHAR(15)
             defaultValue: ""
             description: ""
-            name: C_COMMENT
-            nullable: true
+            name: O_ORDERPRIORITY
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 602
+              stepCounter: 57
+            config: {}
+            dataType: VARCHAR(15)
+            defaultValue: ""
+            description: ""
+            name: O_CLERK
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 603
+              stepCounter: 57
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: O_SHIPPRIORITY
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 604
+              stepCounter: 57
+            config: {}
+            dataType: VARCHAR(79)
+            defaultValue: ""
+            description: ""
+            name: O_COMMENT
+            nullable: false
             primaryKey: false
             uniqueKey: false
         join:
-          joinCondition: FROM {{ ref('SRC', 'CUSTOMER') }}
-      name: CUSTOMER
+          joinCondition: FROM {{ ref('SRC', 'ORDERS') }}
+      name: ORDERS
       schema: ""
       sqlType: Source
-      table: CUSTOMER
+      table: ORDERS
       type: sourceInput
-    stepCounter: "54"
+    stepCounter: "57"

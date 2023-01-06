@@ -1,5 +1,5 @@
 steps:
-  STG_CUSTOMER1-51:
+  STG_CUSTOMER-59:
     operation:
       config:
         insertStrategy: INSERT
@@ -14,14 +14,14 @@ steps:
       isDataVault: false
       isMultisource: false
       locationID: ""
-      locationName: QA_A
+      locationName: DEV_A
       materializationType: table
       metadata:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 544
-              stepCounter: "51"
+              columnCounter: 614
+              stepCounter: "59"
             dataType: NUMBER(38,0)
             description: SF*150,000 are populated
             hashColumns: []
@@ -30,12 +30,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 536
-                    stepCounter: "50"
-                transform: select 1
+                  - columnCounter: 568
+                    stepCounter: "54"
+                transform: ""
           - columnReference:
-              columnCounter: 545
-              stepCounter: "51"
+              columnCounter: 615
+              stepCounter: "59"
             dataType: VARCHAR(25)
             description: ""
             hashColumns: []
@@ -44,12 +44,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 537
-                    stepCounter: "50"
+                  - columnCounter: 569
+                    stepCounter: "54"
                 transform: ""
           - columnReference:
-              columnCounter: 546
-              stepCounter: "51"
+              columnCounter: 616
+              stepCounter: "59"
             dataType: VARCHAR(40)
             description: ""
             hashColumns: []
@@ -58,12 +58,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 538
-                    stepCounter: "50"
+                  - columnCounter: 570
+                    stepCounter: "54"
                 transform: ""
           - columnReference:
-              columnCounter: 547
-              stepCounter: "51"
+              columnCounter: 617
+              stepCounter: "59"
             dataType: NUMBER(38,0)
             description: Foreign Key to N_NATIONKEY
             hashColumns: []
@@ -72,12 +72,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 539
-                    stepCounter: "50"
+                  - columnCounter: 571
+                    stepCounter: "54"
                 transform: ""
           - columnReference:
-              columnCounter: 548
-              stepCounter: "51"
+              columnCounter: 618
+              stepCounter: "59"
             dataType: VARCHAR(15)
             description: ""
             hashColumns: []
@@ -86,12 +86,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 540
-                    stepCounter: "50"
+                  - columnCounter: 572
+                    stepCounter: "54"
                 transform: ""
           - columnReference:
-              columnCounter: 549
-              stepCounter: "51"
+              columnCounter: 619
+              stepCounter: "59"
             dataType: NUMBER(12,2)
             description: ""
             hashColumns: []
@@ -100,12 +100,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 541
-                    stepCounter: "50"
+                  - columnCounter: 573
+                    stepCounter: "54"
                 transform: ""
           - columnReference:
-              columnCounter: 550
-              stepCounter: "51"
+              columnCounter: 620
+              stepCounter: "59"
             dataType: VARCHAR(10)
             description: ""
             hashColumns: []
@@ -114,12 +114,12 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 542
-                    stepCounter: "50"
+                  - columnCounter: 574
+                    stepCounter: "54"
                 transform: ""
           - columnReference:
-              columnCounter: 551
-              stepCounter: "51"
+              columnCounter: 621
+              stepCounter: "59"
             dataType: VARCHAR(117)
             description: ""
             hashColumns: []
@@ -128,26 +128,24 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 543
-                    stepCounter: "50"
+                  - columnCounter: 575
+                    stepCounter: "54"
                 transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - aliases:
-              STG_CUSTOMER: "50"
-            customSQL:
+          - customSQL:
               customSQL: ""
             dependencies:
-              - locationName: QA_A
-                nodeName: STG_CUSTOMER
+              - locationName: SRC
+                nodeName: CUSTOMER
             join:
-              joinCondition: FROM {{ ref('QA_A', 'STG_CUSTOMER') }} "STG_CUSTOMER"
-            name: STG_CUSTOMER1
+              joinCondition: FROM {{ ref('SRC', 'CUSTOMER') }} "CUSTOMER"
+            name: STG_CUSTOMER
             noLinkRefs: []
-      name: STG_CUSTOMER1
+      name: STG_CUSTOMER
       overrideSQL: false
       schema: ""
       sqlType: Stage
       type: sql
-    stepCounter: "51"
+    stepCounter: "59"

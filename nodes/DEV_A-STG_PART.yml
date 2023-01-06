@@ -1,0 +1,263 @@
+steps:
+  STG_PART-63:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DEV_A
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 663
+              stepCounter: "63"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PSTG_PART_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 631
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 664
+              stepCounter: "63"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_PARTKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 632
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 665
+              stepCounter: "63"
+            dataType: VARCHAR(55)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 633
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 666
+              stepCounter: "63"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_MFGR
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 634
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 667
+              stepCounter: "63"
+            dataType: VARCHAR(10)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_BRAND
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 635
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 668
+              stepCounter: "63"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_TYPE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 636
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 669
+              stepCounter: "63"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_SIZE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 637
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 670
+              stepCounter: "63"
+            dataType: VARCHAR(10)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_CONTAINER
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 638
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 671
+              stepCounter: "63"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_RETAILPRICE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 639
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 672
+              stepCounter: "63"
+            dataType: VARCHAR(23)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 640
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 673
+              stepCounter: "63"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_VERSION
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 641
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 674
+              stepCounter: "63"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_CURRENT_FLAG
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 642
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 675
+              stepCounter: "63"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_START_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 643
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 676
+              stepCounter: "63"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_END_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 644
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 677
+              stepCounter: "63"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_CREATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 645
+                    stepCounter: "61"
+                transform: ""
+          - columnReference:
+              columnCounter: 678
+              stepCounter: "63"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_UPDATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 646
+                    stepCounter: "61"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DEV_A
+                nodeName: PSTG_PART
+            join:
+              joinCondition: FROM {{ ref('DEV_A', 'PSTG_PART') }} "PSTG_PART"
+            name: STG_PART
+            noLinkRefs: []
+      name: STG_PART
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: "63"

@@ -1,5 +1,5 @@
 steps:
-  STG_CUSTOMER-50:
+  STG_PART1-64:
     operation:
       config:
         insertStrategy: INSERT
@@ -14,122 +14,136 @@ steps:
       isDataVault: false
       isMultisource: false
       locationID: ""
-      locationName: QA_A
-      materializationType: table
+      locationName: DEV_A
+      materializationType: view
       metadata:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 536
-              stepCounter: "50"
+              columnCounter: 679
+              stepCounter: "64"
             dataType: NUMBER(38,0)
-            description: SF*150,000 are populated
+            description: ""
             hashColumns: []
             hashDetails: null
-            name: C_CUSTKEY
+            name: P_PARTKEY
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 528
-                    stepCounter: "49"
+                  - columnCounter: 605
+                    stepCounter: "58"
                 transform: ""
           - columnReference:
-              columnCounter: 537
-              stepCounter: "50"
+              columnCounter: 680
+              stepCounter: "64"
+            dataType: VARCHAR(55)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 606
+                    stepCounter: "58"
+                transform: INITCAP("PART"."P_NAME")
+          - columnReference:
+              columnCounter: 681
+              stepCounter: "64"
             dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: C_NAME
+            name: P_MFGR
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 529
-                    stepCounter: "49"
+                  - columnCounter: 607
+                    stepCounter: "58"
                 transform: ""
           - columnReference:
-              columnCounter: 538
-              stepCounter: "50"
-            dataType: VARCHAR(40)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: C_ADDRESS
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 530
-                    stepCounter: "49"
-                transform: ""
-          - columnReference:
-              columnCounter: 539
-              stepCounter: "50"
-            dataType: NUMBER(38,0)
-            description: Foreign Key to N_NATIONKEY
-            hashColumns: []
-            hashDetails: null
-            name: C_NATIONKEY
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 531
-                    stepCounter: "49"
-                transform: ""
-          - columnReference:
-              columnCounter: 540
-              stepCounter: "50"
-            dataType: VARCHAR(15)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: C_PHONE
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 532
-                    stepCounter: "49"
-                transform: ""
-          - columnReference:
-              columnCounter: 541
-              stepCounter: "50"
-            dataType: NUMBER(12,2)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: C_ACCTBAL
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 533
-                    stepCounter: "49"
-                transform: ""
-          - columnReference:
-              columnCounter: 542
-              stepCounter: "50"
+              columnCounter: 682
+              stepCounter: "64"
             dataType: VARCHAR(10)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: C_MKTSEGMENT
-            nullable: true
+            name: P_BRAND
+            nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 534
-                    stepCounter: "49"
+                  - columnCounter: 608
+                    stepCounter: "58"
                 transform: ""
           - columnReference:
-              columnCounter: 543
-              stepCounter: "50"
-            dataType: VARCHAR(117)
+              columnCounter: 683
+              stepCounter: "64"
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: C_COMMENT
+            name: P_TYPE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 609
+                    stepCounter: "58"
+                transform: ""
+          - columnReference:
+              columnCounter: 684
+              stepCounter: "64"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_SIZE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 610
+                    stepCounter: "58"
+                transform: ""
+          - columnReference:
+              columnCounter: 685
+              stepCounter: "64"
+            dataType: VARCHAR(10)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_CONTAINER
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 611
+                    stepCounter: "58"
+                transform: ""
+          - columnReference:
+              columnCounter: 686
+              stepCounter: "64"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_RETAILPRICE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 612
+                    stepCounter: "58"
+                transform: ""
+          - columnReference:
+              columnCounter: 687
+              stepCounter: "64"
+            dataType: VARCHAR(23)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: P_COMMENT
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 535
-                    stepCounter: "49"
+                  - columnCounter: 613
+                    stepCounter: "58"
                 transform: ""
         cteString: ""
         enabledColumnTestIDs: []
@@ -138,14 +152,14 @@ steps:
               customSQL: ""
             dependencies:
               - locationName: SRC
-                nodeName: CUSTOMER
+                nodeName: PART
             join:
-              joinCondition: FROM {{ ref('SRC', 'CUSTOMER') }} "CUSTOMER"
-            name: STG_CUSTOMER
+              joinCondition: FROM {{ ref('SRC', 'PART') }} "PART"
+            name: STG_PART1
             noLinkRefs: []
-      name: STG_CUSTOMER
+      name: STG_PART1
       overrideSQL: false
       schema: ""
       sqlType: Stage
       type: sql
-    stepCounter: "50"
+    stepCounter: "64"
