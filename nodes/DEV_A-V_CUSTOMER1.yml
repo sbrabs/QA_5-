@@ -29,7 +29,7 @@ steps:
               - columnReferences:
                   - columnCounter: 544
                     stepCounter: "51"
-                transform: ""
+                transform: INITCAP("CUSTOMER"."C_CUSTKEY")
           - columnReference:
               columnCounter: 553
               stepCounter: "52"
