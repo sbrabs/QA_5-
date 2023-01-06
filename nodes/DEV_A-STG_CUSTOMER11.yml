@@ -27,7 +27,7 @@ steps:
             hashColumns: []
             hashDetails: null
             name: C_CUSTKEY
-            nullable: false
+            nullable: true
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: 552
@@ -74,7 +74,7 @@ steps:
               - columnReferences:
                   - columnCounter: 555
                     stepCounter: "52"
-                transform: ""
+                transform: INITCAP("CUSTOMER"."C_NATIONKEY")
           - columnReference:
               columnCounter: 564
               stepCounter: "53"
