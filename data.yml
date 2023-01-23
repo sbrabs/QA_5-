@@ -1,4 +1,4 @@
-defaultStorageMapping: WORK
+defaultStorageMapping: TEZT
 jobs: {}
 locations:
   SAMPLE:
@@ -12,6 +12,17 @@ locations:
       "6":
         database: AARON_EDW
         schema: DEV_EDW
+  TEZT:
+    mappingDefinitions:
+      "2":
+        database: ""
+        schema: ""
+      "3":
+        database: ""
+        schema: ""
+      "6":
+        database: ""
+        schema: ""
   WORK:
     mappingDefinitions:
       "2":
@@ -1215,7 +1226,7 @@ stepTypes:
     id: Stage
     isDisabled: false
     metadata:
-      defaultStorageLocation: null
+      defaultStorageLocation: SAMPLE
       error: null
       nodeMetadataSpec: |
         capitalized: Stage
