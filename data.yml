@@ -9,6 +9,9 @@ locations:
       "3":
         database: SNOWFLAKE_SAMPLE_DATA
         schema: TPCH_SF1
+      "6":
+        database: AARON_EDW
+        schema: DEV_EDW
   WORK:
     mappingDefinitions:
       "2":
@@ -17,6 +20,9 @@ locations:
       "3":
         database: ""
         schema: ""
+      "6":
+        database: AARON_EDW
+        schema: DEV_EDW
 macros: {}
 packages: {}
 projects: {}
