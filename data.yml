@@ -1,6 +1,14 @@
 defaultStorageMapping: WORK
 jobs: {}
 locations:
+  BALLS:
+    mappingDefinitions:
+      "2":
+        database: ""
+        schema: ""
+      "3":
+        database: SCOTT_DB
+        schema: 5_1_C
   SAMPLE:
     mappingDefinitions:
       "2":
@@ -15,8 +23,8 @@ locations:
         database: ""
         schema: ""
       "3":
-        database: ""
-        schema: ""
+        database: SCOTT_DB
+        schema: 5_1_B
 macros: {}
 packages: {}
 projects: {}
