@@ -12,8 +12,8 @@ locations:
   WORK:
     mappingDefinitions:
       "2":
-        database: ""
-        schema: ""
+        database: SCOTT_DB
+        schema: 5_1_D
       "3":
         database: SCOTT_DB
         schema: 5_1_B
