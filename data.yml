@@ -1,8 +1,16 @@
 defaultStorageMapping: SRC
 jobs: {}
 locations:
+  A:
+    mappingDefinitions:
+      "3":
+        database: SCOTT_DB
+        schema: TEST
   SRC:
-    mappingDefinitions: {}
+    mappingDefinitions:
+      "3":
+        database: COALESCE_SAMPLE_DATABASE
+        schema: TPCH_SF001
 macros: {}
 packages: {}
 projects: {}
