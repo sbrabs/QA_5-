@@ -32,7 +32,7 @@ steps:
               - columnReferences:
                   - columnCounter: 6f185775-5c0f-452e-b949-d43b97a7d583
                     stepCounter: 95281f12-07bf-4875-b33e-38fe1ed2b6fc
-                transform: ""
+                transform: LOWER("CUSTOMER"."C_CUSTKEY")
           - columnReference:
               columnCounter: 3d4fc9b8-504e-4b34-92a2-944aaa0a9f62
               stepCounter: 06ac13bc-2a77-4e9f-b242-554057d2e22b
