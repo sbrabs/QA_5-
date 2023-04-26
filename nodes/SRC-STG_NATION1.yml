@@ -1,12 +1,10 @@
 steps:
-  STG_NATION-26fd6712-b154-47f4-9514-11724e823e98:
+  STG_NATION1-ad32768a-2b6f-4e72-813f-a965ceede60f:
     operation:
       config:
         insertStrategy: INSERT
-        postSQL: |
-          SELECT 1 FROM {{ ref(node.location.name, node.name) }} LIMIT 0
-        preSQL: |
-          SELECT 1 FROM {{ ref(node.location.name, node.name) }} LIMIT 0
+        postSQL: ""
+        preSQL: ""
         testsEnabled: true
         truncateBefore: true
       database: ""
@@ -14,14 +12,14 @@ steps:
       description: ""
       isDataVault: false
       isMultisource: false
-      locationName: PROD
+      locationName: SRC
       materializationType: table
       metadata:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 02d0aadf-0723-42fb-adea-c4cc3541e789
-              stepCounter: 26fd6712-b154-47f4-9514-11724e823e98
+              columnCounter: 06806d18-db65-4318-a577-111629b3fcc2
+              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -34,8 +32,8 @@ steps:
                     stepCounter: 1db8e12b-26ff-4588-8870-e973dbc444b2
                 transform: ""
           - columnReference:
-              columnCounter: 08e4055b-c238-4c2e-b4e3-273715a3c482
-              stepCounter: 26fd6712-b154-47f4-9514-11724e823e98
+              columnCounter: 6a06990e-fa75-456b-8b9c-b53055025698
+              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
             dataType: VARCHAR(25)
             description: ""
             hashColumns: []
@@ -48,8 +46,8 @@ steps:
                     stepCounter: 1db8e12b-26ff-4588-8870-e973dbc444b2
                 transform: ""
           - columnReference:
-              columnCounter: e1c448ea-be4f-4622-bf26-09a1e733e4d0
-              stepCounter: 26fd6712-b154-47f4-9514-11724e823e98
+              columnCounter: 4f943dfd-3790-4ce2-b9dc-97cb541ece34
+              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -62,8 +60,8 @@ steps:
                     stepCounter: 1db8e12b-26ff-4588-8870-e973dbc444b2
                 transform: ""
           - columnReference:
-              columnCounter: 9f5e24db-9e82-4194-858d-fc970d0dcab8
-              stepCounter: 26fd6712-b154-47f4-9514-11724e823e98
+              columnCounter: 2ceb6cc9-7d16-4310-aa65-e0053bfce614
+              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
             dataType: VARCHAR(152)
             description: ""
             hashColumns: []
@@ -85,11 +83,11 @@ steps:
                 nodeName: NATION
             join:
               joinCondition: FROM {{ ref('SRC', 'NATION') }} "NATION"
-            name: STG_NATION
+            name: STG_NATION1
             noLinkRefs: []
-      name: STG_NATION
+      name: STG_NATION1
       overrideSQL: false
       schema: ""
-      sqlType: Stage
+      sqlType: "1"
       type: sql
-    stepCounter: 26fd6712-b154-47f4-9514-11724e823e98
+    stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
