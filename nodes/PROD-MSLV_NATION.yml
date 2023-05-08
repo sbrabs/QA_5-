@@ -9,7 +9,7 @@ steps:
       description: ""
       isDataVault: false
       isMultisource: false
-      locationName: SRC
+      locationName: PROD
       materializationType: table
       metadata:
         appliedNodeTests: []
