@@ -1,12 +1,9 @@
 steps:
-  STG_NATION1-ad32768a-2b6f-4e72-813f-a965ceede60f:
+  MSLV_NATION-e9fc4fb9-d47d-48d8-8f10-2ae2b2726b73:
     operation:
       config:
-        insertStrategy: INSERT
-        postSQL: ""
-        preSQL: ""
-        testsEnabled: true
-        truncateBefore: true
+        storageLocationSearchText: ""
+        viewoption: single view
       database: ""
       deployEnabled: true
       description: ""
@@ -18,8 +15,8 @@ steps:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 06806d18-db65-4318-a577-111629b3fcc2
-              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
+              columnCounter: 38d25584-8e11-46bd-b96f-1beb1f2bb2d2
+              stepCounter: e9fc4fb9-d47d-48d8-8f10-2ae2b2726b73
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -32,8 +29,8 @@ steps:
                     stepCounter: 1db8e12b-26ff-4588-8870-e973dbc444b2
                 transform: ""
           - columnReference:
-              columnCounter: 6a06990e-fa75-456b-8b9c-b53055025698
-              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
+              columnCounter: 611f549f-80c3-4c3f-883d-d210a7c1da93
+              stepCounter: e9fc4fb9-d47d-48d8-8f10-2ae2b2726b73
             dataType: VARCHAR(25)
             description: ""
             hashColumns: []
@@ -46,8 +43,8 @@ steps:
                     stepCounter: 1db8e12b-26ff-4588-8870-e973dbc444b2
                 transform: ""
           - columnReference:
-              columnCounter: 4f943dfd-3790-4ce2-b9dc-97cb541ece34
-              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
+              columnCounter: 8abf480b-cb9d-493b-b63d-5bcec4173639
+              stepCounter: e9fc4fb9-d47d-48d8-8f10-2ae2b2726b73
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -60,8 +57,8 @@ steps:
                     stepCounter: 1db8e12b-26ff-4588-8870-e973dbc444b2
                 transform: ""
           - columnReference:
-              columnCounter: 2ceb6cc9-7d16-4310-aa65-e0053bfce614
-              stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
+              columnCounter: 08ffadd9-cd00-40a9-a555-48ddab5e5b6d
+              stepCounter: e9fc4fb9-d47d-48d8-8f10-2ae2b2726b73
             dataType: VARCHAR(152)
             description: ""
             hashColumns: []
@@ -83,11 +80,11 @@ steps:
                 nodeName: NATION
             join:
               joinCondition: FROM {{ ref('SRC', 'NATION') }} "NATION"
-            name: STG_NATION1
+            name: MSLV_NATION
             noLinkRefs: []
-      name: STG_NATION1
+      name: MSLV_NATION
       overrideSQL: false
       schema: ""
-      sqlType: "1"
+      sqlType: "2"
       type: sql
-    stepCounter: ad32768a-2b6f-4e72-813f-a965ceede60f
+    stepCounter: e9fc4fb9-d47d-48d8-8f10-2ae2b2726b73

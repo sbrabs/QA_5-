@@ -234,6 +234,48 @@ stepTypes:
             {% endif %}
     name: Copy of Stage
     version: 1
+  StepType-2:
+    id: "2"
+    isDisabled: false
+    metadata:
+      defaultStorageLocation: null
+      error: null
+      nodeMetadataSpec: |-
+        capitalized: Multi Source Loop View 
+        short: MSLV 
+        plural: Multi Source Loop Views 
+        tagColor: 'yellow' 
+        description: Requires that the engineer joins all prior nodes from the same source schema. 
+
+        config: 
+        - groupName: Multi Source Loop View Options 
+          items: 
+          - type: dropdownSelector 
+            displayName: 'Create View Options' 
+            attributeName: 'viewoption' 
+            default: 'multi source view' 
+            options: 
+            - 'single view' 
+            - 'multi source view' 
+            isRequired: true 
+
+          - displayName: Coalesce Source Starts With (Schema Level) 
+            attributeName: storageLocationSearchText 
+            type: textBox 
+            isRequired: false 
+            systemColumns: 
+            - displayName: 'SOURCE' 
+              transform: '' 
+              dataType: VARCHAR 
+              placement: end 
+              attributeName: isSystemSource
+      templates:
+        create:
+          templateString: "{% if node.override.create.enabled %} {{ node.override.create.script }} {% elif config.viewoption == 'single view' %} {{ stage('Create ' + this + ' View' | string) }} CREATE OR REPLACE VIEW {{ ref_no_link(node.location.name, node.name) }} ( {% for col in columns %} \"{{ col.name }}\" {%- if col.description | length > 0 %} COMMENT '{{ col.description | escape }}'{% endif %} {%- if not loop.last -%}, {% endif %} {% endfor %} ) {%- if node.description | length > 0 %} COMMENT = '{{ node.description | escape }}'{% endif %} AS {% for source in sources %} SELECT {% for col in source.columns %} {{ get_source_transform(col) }} AS \"{{ col.name }}\" {%- if not loop.last -%}, {% endif %} {% endfor %} {{ source.join }} {% endfor %} {% elif config.viewoption == 'multi source view' %} {{ stage('Create ' + this + ' View' | string) }} CREATE OR REPLACE VIEW {{ this }} ( {% for col in columns if not col.isPrimaryKey%} \"{{ col.name }}\" {%- if col.description | length > 0 %} COMMENT '{{ col.description }}'{% endif %} {%- if not loop.last -%}, {% endif %} {% endfor %} ) {%- if node.description | length > 0 %} COMMENT = '{{ node.description }}'{% endif %} AS {% for src in storageLocations if (src.name).startswith(config.storageLocationSearchText) %} {% if src.schema not in ('PX_DIRECTORYDB','PUBLIC') %} SELECT {% for col in sources[0].columns if not col.isPrimaryKey %} {% if col.isSystemSource %} '{{src.schema}}' AS \"{{col.name}}\" {% elif col.transform | length > 0%} {{col.transform}} AS \"{{col.name}}\" {% elif col.name != col.sourceColumns[0].column.name %} \"{{col.sourceColumns[0].node.name}}\".\"{{col.sourceColumns[0].column.name}}\" AS \"{{col.name}}\" {% else %} \"{{col.sourceColumns[0].node.name}}\".\"{{col.name}}\" {% endif %} {%- if not loop.last -%},{% endif %} {% endfor %} {% with %} {% set sqlJoinText = sources[0].join %} {% set sourceList = [] %} {% for n in sources[0].dependencies %} {% if n.node.nodeType == 'Source' %} {{sourceList.append(n.node.location.name) or \"\" }} {% endif %} {% endfor %} {% set sourceList = (sourceList | unique | list) %} {% for s in storageLocations %} {% if s.name in sourceList and s.schema not in ('PX_DIRECTORYDB','PUBLIC') %} {{ sqlJoinText.replace(s.name, src.name) }} {% endif %} {% endfor %} {% endwith %} {%- if not loop.last -%} UNION {% endif %} {% endif %} {% endfor %} {% endif %}"
+        run:
+          templateString: ""
+    name: doo
+    version: 1
   StepType-Dimension:
     id: Dimension
     isDisabled: false
