@@ -10,7 +10,7 @@ steps:
       isDataVault: false
       isMultisource: false
       locationName: PROD
-      materializationType: table
+      materializationType: view
       metadata:
         appliedNodeTests: []
         columns:
