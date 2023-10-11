@@ -8,16 +8,16 @@ locations:
         database: SCOTT_DB
         schema: DEV
       "3":
-        database: ""
-        schema: ""
+        database: SCOTT_DB
+        schema: CHAIN_VIEWS_2
   SRC:
     mappingDefinitions:
       "17":
         database: COALESCE_SAMPLE_DATABASE
         schema: TPCH_SF001
       "3":
-        database: ""
-        schema: ""
+        database: COALESCE_SAMPLE_DATABASE
+        schema: TPCH_SF001
 macros: {}
 packages: {}
 projects: {}
