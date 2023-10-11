@@ -145,6 +145,20 @@ steps:
                   - columnCounter: 9357a0cd-4f50-4162-bc25-50f975e903fe
                     stepCounter: c415798e-895b-44bc-aceb-38f5b441fc44
                 transform: ""
+          - columnReference:
+              columnCounter: 79e7c605-5560-4c61-821e-0d29022c595a
+              stepCounter: 1263b77d-0a43-424d-9876-db84816a6b65
+            dataType: VARCHAR(79)
+            description: "'duped'"
+            hashColumns: []
+            hashDetails: null
+            name: O_COMMENT1
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 9357a0cd-4f50-4162-bc25-50f975e903fe
+                    stepCounter: c415798e-895b-44bc-aceb-38f5b441fc44
+                transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
