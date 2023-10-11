@@ -149,7 +149,7 @@ steps:
               columnCounter: 79e7c605-5560-4c61-821e-0d29022c595a
               stepCounter: 1263b77d-0a43-424d-9876-db84816a6b65
             dataType: VARCHAR(79)
-            description: "'duped'"
+            description: duped
             hashColumns: []
             hashDetails: null
             name: O_COMMENT1
